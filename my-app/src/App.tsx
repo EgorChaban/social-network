@@ -22,6 +22,11 @@ function App(props: PropsType) {
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar state={props.state}/>
+                <ul>
+                    <li>f</li>
+                    <li>g</li>
+                    <li>s</li>
+                </ul>
                 <div className='app-wrapper-content'>
                     <Route exact path='/'
                            render={ () => <Profile
