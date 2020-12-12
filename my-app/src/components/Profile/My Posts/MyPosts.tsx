@@ -1,8 +1,8 @@
-import React from "react";
+import React, {KeyboardEvent} from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {ProfilePageType} from "../../../redux/state";
-import {PostType} from "../../../redux/state";
+
 
 type PropsType = {
     state: ProfilePageType
@@ -35,6 +35,11 @@ export function MyPosts(props: PropsType) {
             newPostElement.current.value = '';
         }
     }
+    const onKeyPressEnter = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key === 'Enter'){
+            addPost()
+        }
+    }
 
 
     return (
@@ -44,6 +49,7 @@ export function MyPosts(props: PropsType) {
                     <textarea ref={newPostElement}
                               className={s.postArea}
                               placeholder={'add post...'}
+                              onKeyPress={onKeyPressEnter}
                     ></textarea>
                     <button onClick={ addPost } className={s.postBtn}>Add post</button>
             </div>

@@ -1,15 +1,16 @@
 import {rerenderEntireTree} from "../render";
+import {v1} from "uuid";
 
 const selfAvatar = 'https://www.meme-arsenal.com/memes/c651160ee5a293f357522fdd83ddbf64.jpg'
 
 export type MessagesType = {
-    id: number
-    host: number
+    id: string
     message: string
-
 }
+export const hostId1 = v1()
+export const hostId2 = v1()
 export type  DialogsType = {
-    id: number
+    id: string
     name: string
     img: string
 }
@@ -19,7 +20,7 @@ export type DialogsPageType = {
 }
 
 export type PostType = {
-    id: number
+    id: string
     message: string
     likesCount: number
     img: string
@@ -35,7 +36,7 @@ export type RootStateType = {
 }
 
 export type SideBarType = {
-    id: number
+    id: string
     img: string
     name: string
 }
@@ -44,36 +45,36 @@ export type SideBarType = {
 export let state: RootStateType = {
 
 sideBar: [
-            {id: 1, name: 'Dimych', img: 'https://png.pngtree.com/png-vector/20191116/ourlarge/pngtree-businessman-avatar-icon-vector-download-vector-user-icon-avatar-silhouette-social-png-image_1991050.jpg'},
-            {id: 2, name: 'Andrey', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3enUqMY0Q7ro2iTlw90Z3A9b0JRl1cXtXAoBdYOfrvJWBi6V1M4KPfrX7htT1fTOPLtbfjpelIQ8wObM4tVzuCwZ8kdteGqS9UQ&usqp=CAU&ec=45732304'},
-            {id: 3, name: 'Sveta', img: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX33495464.jpg'},
-            {id: 4, name: 'Sasha', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHap6MHS88DOJ02HgOdYogpj44m1lhUDDZliU2L9vX_F9NXSjJGabh8xbYb9QgArwdLBBSRUw5g1otvcxm7gflsDUUZOZnAULrQ&usqp=CAU&ec=45732304'},
-            {id: 5, name: 'Victor', img: 'https://png.pngtree.com/png-clipart/20190924/original/pngtree-business-people-avatar-icon-user-profile-free-vector-png-image_4815126.jpg'},
-            {id: 6, name: 'Valera', img: 'https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg'},
+            {id: v1(), name: 'Dimych', img: 'https://png.pngtree.com/png-vector/20191116/ourlarge/pngtree-businessman-avatar-icon-vector-download-vector-user-icon-avatar-silhouette-social-png-image_1991050.jpg'},
+            {id: v1(), name: 'Andrey', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3enUqMY0Q7ro2iTlw90Z3A9b0JRl1cXtXAoBdYOfrvJWBi6V1M4KPfrX7htT1fTOPLtbfjpelIQ8wObM4tVzuCwZ8kdteGqS9UQ&usqp=CAU&ec=45732304'},
+            {id: v1(), name: 'Sveta', img: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX33495464.jpg'},
+            {id: v1(), name: 'Sasha', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHap6MHS88DOJ02HgOdYogpj44m1lhUDDZliU2L9vX_F9NXSjJGabh8xbYb9QgArwdLBBSRUw5g1otvcxm7gflsDUUZOZnAULrQ&usqp=CAU&ec=45732304'},
+            {id: v1(), name: 'Victor', img: 'https://png.pngtree.com/png-clipart/20190924/original/pngtree-business-people-avatar-icon-user-profile-free-vector-png-image_4815126.jpg'},
+            {id: v1(), name: 'Valera', img: 'https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg'},
        ],
 
     profilePage: {
         posts: [
             {
-                id: 1,
+                id: v1(),
                 message: 'Hi, how are you',
                 likesCount: 15,
                 img: selfAvatar
             },
             {
-                id: 2,
+                id: v1(),
                 message: 'Its my first post!',
                 likesCount: 10,
                 img: selfAvatar
             },
             {
-                id: 3,
+                id: v1(),
                 message: 'YOYOYOOYO!',
                 likesCount: 25,
                 img: selfAvatar
             },
             {
-                id: 4,
+                id: v1(),
                 message: 'dada',
                 likesCount: 25,
                 img: selfAvatar
@@ -83,30 +84,41 @@ sideBar: [
     },
     dialogsPage: {
         messages: [
-            {id: 1, host: 1, message: 'Hi'},
-            {id: 2, host: 2, message: 'How your it-kamasutra'},
-            {id: 3, host: 1, message: 'Yo'},
-            {id: 4, host: 2, message: 'YoYOYO'},
+            {id: hostId1, message: 'How your it-kamasutra'},
+            {id: hostId2, message: 'Hi'},
+
         ],
         dialogs: [
-            {id: 1, name: 'Dimych', img: 'https://png.pngtree.com/png-vector/20191116/ourlarge/pngtree-businessman-avatar-icon-vector-download-vector-user-icon-avatar-silhouette-social-png-image_1991050.jpg'},
-            {id: 2, name: 'Andrey', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3enUqMY0Q7ro2iTlw90Z3A9b0JRl1cXtXAoBdYOfrvJWBi6V1M4KPfrX7htT1fTOPLtbfjpelIQ8wObM4tVzuCwZ8kdteGqS9UQ&usqp=CAU&ec=45732304'},
-            {id: 3, name: 'Sveta', img: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX33495464.jpg'},
-            {id: 4, name: 'Sasha', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHap6MHS88DOJ02HgOdYogpj44m1lhUDDZliU2L9vX_F9NXSjJGabh8xbYb9QgArwdLBBSRUw5g1otvcxm7gflsDUUZOZnAULrQ&usqp=CAU&ec=45732304'},
-            {id: 5, name: 'Victor', img: 'https://png.pngtree.com/png-clipart/20190924/original/pngtree-business-people-avatar-icon-user-profile-free-vector-png-image_4815126.jpg'},
-            {id: 6, name: 'Valera', img: 'https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg'},
+            {id: v1(), name: 'Dimych', img: 'https://png.pngtree.com/png-vector/20191116/ourlarge/pngtree-businessman-avatar-icon-vector-download-vector-user-icon-avatar-silhouette-social-png-image_1991050.jpg'},
+            {id: v1(), name: 'Andrey', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3enUqMY0Q7ro2iTlw90Z3A9b0JRl1cXtXAoBdYOfrvJWBi6V1M4KPfrX7htT1fTOPLtbfjpelIQ8wObM4tVzuCwZ8kdteGqS9UQ&usqp=CAU&ec=45732304'},
+            {id: v1(), name: 'Sveta', img: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX33495464.jpg'},
+            {id: v1(), name: 'Sasha', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHap6MHS88DOJ02HgOdYogpj44m1lhUDDZliU2L9vX_F9NXSjJGabh8xbYb9QgArwdLBBSRUw5g1otvcxm7gflsDUUZOZnAULrQ&usqp=CAU&ec=45732304'},
+            {id: v1(), name: 'Victor', img: 'https://png.pngtree.com/png-clipart/20190924/original/pngtree-business-people-avatar-icon-user-profile-free-vector-png-image_4815126.jpg'},
+            {id: v1(), name: 'Valera', img: 'https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg'},
         ],
     },
 }
 export const addPost = (postMessage: string) => {
 
     const newPost: PostType = {
-        id: 5,
+        id: v1(),
         message: postMessage,
         likesCount: 0,
-        img: "https://i.pinimg.com/236x/11/70/25/1170255c5a3a52a2e91a6ba7fb2590a1.jpg",
+        img: selfAvatar
     }
-    state.profilePage.posts.push(newPost)
+    state.profilePage.posts.unshift(newPost)
+    rerenderEntireTree(state)
+}
+
+
+
+
+export const addMessage = (MessageMsg: string) => {
+    const newMessage: MessagesType = {
+        id: state.dialogsPage.messages[0].id === hostId1 ? hostId2 : hostId1,
+        message: MessageMsg
+    }
+    state.dialogsPage.messages.unshift(newMessage)
     rerenderEntireTree(state)
 }
 
