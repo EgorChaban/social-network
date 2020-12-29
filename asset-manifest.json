@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ChabanSocialNetwork/static/css/main.3d2f0394.chunk.css",
-    "main.js": "/ChabanSocialNetwork/static/js/main.bdb3bb51.chunk.js",
-    "main.js.map": "/ChabanSocialNetwork/static/js/main.bdb3bb51.chunk.js.map",
+    "main.js": "/ChabanSocialNetwork/static/js/main.a8801d24.chunk.js",
+    "main.js.map": "/ChabanSocialNetwork/static/js/main.a8801d24.chunk.js.map",
     "runtime-main.js": "/ChabanSocialNetwork/static/js/runtime-main.fb562965.js",
     "runtime-main.js.map": "/ChabanSocialNetwork/static/js/runtime-main.fb562965.js.map",
     "static/js/2.b07f0c7f.chunk.js": "/ChabanSocialNetwork/static/js/2.b07f0c7f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fb562965.js",
     "static/js/2.b07f0c7f.chunk.js",
     "static/css/main.3d2f0394.chunk.css",
-    "static/js/main.bdb3bb51.chunk.js"
+    "static/js/main.a8801d24.chunk.js"
   ]
 }
