@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ChabanSocialNetwork/static/css/main.dd264cc1.chunk.css",
+    "main.js": "/ChabanSocialNetwork/static/js/main.0b0984d1.chunk.js",
+    "main.js.map": "/ChabanSocialNetwork/static/js/main.0b0984d1.chunk.js.map",
+    "runtime-main.js": "/ChabanSocialNetwork/static/js/runtime-main.fb562965.js",
+    "runtime-main.js.map": "/ChabanSocialNetwork/static/js/runtime-main.fb562965.js.map",
+    "static/js/2.b07f0c7f.chunk.js": "/ChabanSocialNetwork/static/js/2.b07f0c7f.chunk.js",
+    "static/js/2.b07f0c7f.chunk.js.map": "/ChabanSocialNetwork/static/js/2.b07f0c7f.chunk.js.map",
+    "static/js/3.21a5b596.chunk.js": "/ChabanSocialNetwork/static/js/3.21a5b596.chunk.js",
+    "static/js/3.21a5b596.chunk.js.map": "/ChabanSocialNetwork/static/js/3.21a5b596.chunk.js.map",
+    "index.html": "/ChabanSocialNetwork/index.html",
+    "static/css/main.dd264cc1.chunk.css.map": "/ChabanSocialNetwork/static/css/main.dd264cc1.chunk.css.map",
+    "static/js/2.b07f0c7f.chunk.js.LICENSE.txt": "/ChabanSocialNetwork/static/js/2.b07f0c7f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb562965.js",
+    "static/js/2.b07f0c7f.chunk.js",
+    "static/css/main.dd264cc1.chunk.css",
+    "static/js/main.0b0984d1.chunk.js"
+  ]
+}
