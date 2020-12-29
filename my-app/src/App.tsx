@@ -9,16 +9,17 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {DialogsPageType, RootStateType} from "./redux/state";
+import {ActionsTypes, DialogsPageType, RootStateType, StoreType} from "./redux/state";
 
 type PropsType={
-    state:RootStateType
-    addPost: (message: string) => void
-    addMessage:(MessageMsg: string) => void
+     state: RootStateType
+     dispatch:(action: ActionsTypes) => void
+
 
 }
 
 function App(props: PropsType) {
+
     return (
             <div className='app-wrapper'>
                 <Header/>
@@ -26,13 +27,14 @@ function App(props: PropsType) {
                 <div className='app-wrapper-content'>
                     <Route exact path='/'
                            render={ () => <Profile
-                               state={props.state.profilePage}
-                               addPost={props.addPost}
+                               profilePage={props.state.profilePage}
+                               dispatch = {props.dispatch}
+
                            /> } />
                     <Route path='/dialogs'
                            render={ () => <Dialogs
                                state={props.state.dialogsPage}
-                               addMessage={props.addMessage}
+                               dispatch = {props.dispatch}
                            /> } />
                     <Route path='/news' render={ () => <News /> } />
                     <Route path='/music' render={ () => <Music /> } />

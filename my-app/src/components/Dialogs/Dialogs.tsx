@@ -2,12 +2,12 @@ import React, {KeyboardEvent} from "react";
 import {DialogItem} from "./DialogItem/DialogItem";
 import s from './Dialogs.module.css';
 import {Message} from "./Message/Message";
-import {DialogsPageType} from "../../redux/state";
+import {ActionsTypes, addMessageActionCreator, DialogsPageType, onMessageChangeActionCreator} from "../../redux/state";
 
 
 type PropsType = {
     state: DialogsPageType
-    addMessage: (MessageMsg: string) => void
+    dispatch: (action: ActionsTypes) => void
 }
 
 
@@ -28,13 +28,20 @@ export const Dialogs = (props: PropsType) => {
 
     const addMessage = () => {
         if (newMessageElement.current) {
-            props.addMessage(newMessageElement.current.value)
-            newMessageElement.current.value = '';
+            props.dispatch(addMessageActionCreator())
+
         }
     }
     const onKeyPressEnter = (e: KeyboardEvent<HTMLTextAreaElement>) => {
         if(e.key === 'Enter'){
             addMessage()
+        }
+    }
+
+    let onMessageChange = () => {
+
+        if (newMessageElement.current) {
+            props.dispatch(onMessageChangeActionCreator(newMessageElement.current.value))
         }
     }
 
@@ -49,11 +56,14 @@ export const Dialogs = (props: PropsType) => {
 
                 <div className={s.addMessage}>
                     <button className={s.btnMessage} onClick={addMessage}>Send</button>
-                    <textarea className={s.areaMessage}
+                    <textarea
+                              onChange={onMessageChange}
+                              className={s.areaMessage}
                               placeholder='message'
                               ref={newMessageElement}
                               onKeyPress={onKeyPressEnter}
-                    ></textarea>
+                              value={props.state.newMessageText}
+                    />
                 </div>
                 {messagesElement}
 
