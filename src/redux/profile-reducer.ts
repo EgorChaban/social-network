@@ -1,10 +1,7 @@
 import {v1} from "uuid";
 import {
-
     PostType, ProfilePageType,
-
     selfAvatar,
-
 } from "./store";
 
 //ACTION CONSTANTS
@@ -13,8 +10,6 @@ const UPDATE_NEW_POST = "UPDATE-NEW-POSt-TEXT";
 
 let initialState= {
         posts: [
-
-
             {
                 id: v1(),
                 message: 'Hi, how are you',
