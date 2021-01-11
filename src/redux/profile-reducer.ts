@@ -37,7 +37,7 @@ let initialState= {
         ],
         newPostText: ''
     }
-
+export type PostActionType = AddPostActionType & UpdateNewPostActionType
 export type AddPostActionType = ReturnType<typeof addPostActionCreator>
 export type UpdateNewPostActionType = ReturnType<typeof updateNewPostTextActionCreator>
 
@@ -56,19 +56,22 @@ export const profileReducer = (state: ProfilePageType = initialState, action: Ad
                 likesCount: 0,
                 img: selfAvatar
             }
-            state.posts = [newPost, ...state.posts]
-            state.newPostText = ''
-            return {...state}
+            return {
+                ...state,
+                newPostText: '',
+                posts: [newPost, ...state.posts]
+            }
+
         }
         case UPDATE_NEW_POST: {
-            state.newPostText = action.newText
-            return {...state}
+            return{
+                ...state,
+                newPostText: action.newText
+            }
         }
         default:
-            return {...state}
+            return { ...state }
     }
-    return {
-        ...state
-    }
+    return {...state}
 
 };
